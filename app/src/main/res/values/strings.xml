@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EcommerceApp</string>
+    <string name="login_background_image">Background Image Login</string>
+    <string name="login_logo">Logo Login</string>
+    <string name="login_title">Ecommerce App</string>
+    <string name="register_title">Registrate</string>
 </resources>
