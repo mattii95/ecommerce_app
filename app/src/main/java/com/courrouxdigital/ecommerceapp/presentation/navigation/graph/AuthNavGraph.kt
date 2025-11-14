@@ -9,6 +9,7 @@ import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.AuthScree
 import com.courrouxdigital.ecommerceapp.presentation.screens.auth.login.LoginView
 import com.courrouxdigital.ecommerceapp.presentation.screens.auth.register.RegisterView
 import com.courrouxdigital.ecommerceapp.presentation.screens.home.HomeScreen
+import com.courrouxdigital.ecommerceapp.presentation.screens.roles.RolesScreen
 
 fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
     navigation(
@@ -24,6 +25,9 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
         }
         composable(route = AuthScreen.Home.route) {
             HomeScreen(navController)
+        }
+        composable(route = AuthScreen.Roles.route) {
+            RolesScreen(navController)
         }
     }
 }

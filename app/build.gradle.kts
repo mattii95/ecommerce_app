@@ -71,6 +71,9 @@ dependencies {
     // Moshi
     implementation(libs.moshi.kotlin)
 
+    // Data Store
+    implementation(libs.androidx.datastore.preferences)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

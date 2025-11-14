@@ -9,6 +9,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.courrouxdigital.ecommerceapp.presentation.components.CustomTopBar
+import com.courrouxdigital.ecommerceapp.presentation.screens.auth.register.components.Register
 import com.courrouxdigital.ecommerceapp.presentation.screens.auth.register.components.RegisterContent
 import com.courrouxdigital.ecommerceapp.ui.theme.EcommerceAppTheme
 
@@ -26,6 +27,8 @@ fun RegisterView(navController: NavHostController) {
     ) { innerPadding ->
         RegisterContent(modifier = Modifier.padding(innerPadding))
     }
+
+    Register(navController)
 }
 
 @Preview(showBackground = true, showSystemUi = true)

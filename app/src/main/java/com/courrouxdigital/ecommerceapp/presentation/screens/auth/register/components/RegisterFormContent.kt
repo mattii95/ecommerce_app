@@ -110,6 +110,9 @@ fun RegisterFormContent(
     CustomButton(
         modifier = Modifier.fillMaxWidth(),
         text = "Confirmar",
-        onClick = { viewModel.validateForm() }
+        onClick = {
+            viewModel.validateForm()
+            viewModel.register()
+        }
     )
 }

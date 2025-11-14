@@ -4,6 +4,7 @@ import android.util.Log
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.courrouxdigital.ecommerceapp.domain.models.AuthResponse
 import com.courrouxdigital.ecommerceapp.domain.usecases.auth.AuthUseCase
 import com.courrouxdigital.ecommerceapp.domain.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,6 +23,10 @@ class LoginViewModel @Inject constructor(
     private val _state = MutableStateFlow(LoginState())
     var state: StateFlow<LoginState> = _state.asStateFlow()
 
+    init {
+        getSession()
+    }
+
     fun login() = viewModelScope.launch {
         if (!isValidForm()) return@launch
 
@@ -31,8 +36,18 @@ class LoginViewModel @Inject constructor(
             password = state.value.password
         )
         _state.update { it.copy(response = result) }
+    }
 
-        Log.d("LoginViewModel", "Response ${state.value.response}")
+    fun saveSession(authResponse: AuthResponse) = viewModelScope.launch {
+        authUseCase.saveSession(authResponse)
+    }
+
+    fun getSession() = viewModelScope.launch {
+        authUseCase.getSession().collect { data ->
+            if (!data.token.isNullOrBlank()) {
+                _state.update { it.copy(response = Resource.Success(data)) }
+            }
+        }
     }
 
     fun onEmailChange(newValue: String) {
