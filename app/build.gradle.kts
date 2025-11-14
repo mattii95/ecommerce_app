@@ -61,6 +61,16 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     ksp(libs.hilt.android.compiler)
 
+    // Retrofit
+    implementation(libs.retrofit)
+
+    // Gson
+    implementation(libs.converter.gson)
+    implementation(libs.gson)
+
+    // Moshi
+    implementation(libs.moshi.kotlin)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

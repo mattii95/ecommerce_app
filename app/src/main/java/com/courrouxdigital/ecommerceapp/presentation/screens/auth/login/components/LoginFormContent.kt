@@ -102,7 +102,7 @@ fun LoginFormContent(
             CustomButton(
                 modifier = Modifier.fillMaxWidth(),
                 onClick = {
-                    viewModel.validateForm()
+                    viewModel.login()
                 },
                 text = "Ingresar"
             )
