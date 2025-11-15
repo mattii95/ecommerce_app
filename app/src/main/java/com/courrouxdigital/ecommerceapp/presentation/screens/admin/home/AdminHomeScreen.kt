@@ -1,4 +1,4 @@
-package com.courrouxdigital.ecommerceapp.presentation.screens.home
+package com.courrouxdigital.ecommerceapp.presentation.screens.admin.home
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -8,11 +8,11 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun AdminHomeScreen(navController: NavHostController) {
     Scaffold() { innerPadding ->
         Text(
             modifier = Modifier.padding(innerPadding),
-            text = "HomeScreen"
+            text = "HomeScreen Admin"
         )
     }
 }

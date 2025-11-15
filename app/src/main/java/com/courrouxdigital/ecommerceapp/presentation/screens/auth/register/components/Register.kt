@@ -28,9 +28,12 @@ fun Register(
 
         is Resource.Success -> {
             LaunchedEffect(Unit) {
-                navController.navigate(route = AuthScreen.Home.route)
+                viewModel.saveSession(response.data)
+                viewModel.clearStatus()
+//                navController.navigate(route = AuthScreen.Home.route){
+//                    popUpTo(AuthScreen.Login.route) { inclusive = true }
+//                }
             }
-            viewModel.clearStatus()
         }
 
         is Resource.Error -> {

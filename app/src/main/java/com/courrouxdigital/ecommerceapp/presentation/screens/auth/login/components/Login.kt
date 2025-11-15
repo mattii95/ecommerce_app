@@ -15,7 +15,9 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.courrouxdigital.ecommerceapp.domain.utils.Resource
 import com.courrouxdigital.ecommerceapp.presentation.components.CustomProgressBar
+import com.courrouxdigital.ecommerceapp.presentation.navigation.Graph
 import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.AuthScreen
+import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.RolesScreen
 import com.courrouxdigital.ecommerceapp.presentation.screens.auth.login.LoginViewModel
 
 @Composable
@@ -38,7 +40,16 @@ fun Login(
             LaunchedEffect(Unit) {
                 viewModel.saveSession(response.data)
                 viewModel.clearStatus()
-                navController.navigate(route = AuthScreen.Home.route)
+                response.data.user?.roles?.size?.let {
+                    if (it > 1)
+                        navController.navigate(route = Graph.ROLES) {
+                            popUpTo(Graph.AUTH) { inclusive = true }
+                        }
+                    else
+                        navController.navigate(route = Graph.CLIENT) {
+                            popUpTo(Graph.AUTH) { inclusive = true }
+                        }
+                }
             }
         }
 

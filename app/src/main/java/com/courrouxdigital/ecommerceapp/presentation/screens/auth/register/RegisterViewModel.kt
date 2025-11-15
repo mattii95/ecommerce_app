@@ -4,6 +4,7 @@ import android.util.Log
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.courrouxdigital.ecommerceapp.domain.models.AuthResponse
 import com.courrouxdigital.ecommerceapp.domain.models.User
 import com.courrouxdigital.ecommerceapp.domain.usecases.auth.AuthUseCase
 import com.courrouxdigital.ecommerceapp.domain.utils.Resource
@@ -39,6 +40,10 @@ class RegisterViewModel @Inject constructor(private val authUseCase: AuthUseCase
 
         _state.update { it.copy(response = result) }
         Log.d("RegisterViewModel", "Response ${state.value.response}")
+    }
+
+    fun saveSession(authResponse: AuthResponse) = viewModelScope.launch {
+        authUseCase.saveSession(authResponse)
     }
 
     fun onNameChange(newValue: String) {
