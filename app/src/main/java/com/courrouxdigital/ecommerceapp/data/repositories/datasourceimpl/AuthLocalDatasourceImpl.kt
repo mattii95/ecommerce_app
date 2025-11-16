@@ -10,6 +10,10 @@ class AuthLocalDatasourceImpl(private val authDataStore: AuthDataStore): AuthLoc
         return authDataStore.save(authResponse)
     }
 
+    override suspend fun logout() {
+        return authDataStore.delete()
+    }
+
     override fun getSession(): Flow<AuthResponse> {
         return authDataStore.getData()
     }

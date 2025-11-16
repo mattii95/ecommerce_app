@@ -7,23 +7,23 @@ import androidx.compose.material.icons.outlined.ThumbUp
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.courrouxdigital.ecommerceapp.presentation.navigation.model.BottomBarItem
 
-sealed class ClientScreen(
+sealed class AdminScreen(
     override val route: String,
     override val title: String,
     override val icon: ImageVector
 ) : BottomBarItem {
-    object CategoryList: ClientScreen(
-        route = "client/category/list",
+    object CategoryList: AdminScreen(
+        route = "admin/category/list",
         title = "Categorias",
         icon = Icons.AutoMirrored.Outlined.List
     )
-    object ProductList: ClientScreen(
-        route = "client/product/list",
+    object ProductList: AdminScreen(
+        route = "admin/product/list",
         title = "Productos",
         icon = Icons.Outlined.ThumbUp
     )
-    object Profile: ClientScreen(
-        route = "client/profile",
+    object Profile: AdminScreen(
+        route = "admin/profile",
         title = "Perfil",
         icon = Icons.Outlined.Person
     )

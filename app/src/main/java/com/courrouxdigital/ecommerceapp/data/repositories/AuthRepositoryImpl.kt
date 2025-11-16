@@ -27,6 +27,10 @@ class AuthRepositoryImpl(
         return ResponseToRequest.executeAction(result)
     }
 
+    override suspend fun logout() {
+        return authLocalDatasource.logout()
+    }
+
     override suspend fun saveSession(authResponse: AuthResponse) {
         return authLocalDatasource.saveSession(authResponse)
     }

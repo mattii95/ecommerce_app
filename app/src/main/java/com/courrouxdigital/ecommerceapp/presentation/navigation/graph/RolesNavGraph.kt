@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.courrouxdigital.ecommerceapp.presentation.navigation.Graph
 import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.RolesScreen
+import com.courrouxdigital.ecommerceapp.presentation.screens.admin.home.AdminHomeScreen
 import com.courrouxdigital.ecommerceapp.presentation.screens.client.home.ClientHomeScreen
 import com.courrouxdigital.ecommerceapp.presentation.screens.roles.RolesScreen
 
@@ -19,6 +20,9 @@ fun NavGraphBuilder.rolesNavGraph(navController: NavHostController) {
         }
         composable(route = Graph.CLIENT) {
             ClientHomeScreen()
+        }
+        composable(route = Graph.ADMIN) {
+            AdminHomeScreen()
         }
     }
 }
