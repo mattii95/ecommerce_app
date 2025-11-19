@@ -4,6 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.courrouxdigital.ecommerceapp.presentation.navigation.Graph
+import com.courrouxdigital.ecommerceapp.presentation.navigation.graph.auth.authNavGraph
+import com.courrouxdigital.ecommerceapp.presentation.navigation.graph.roles.rolesNavGraph
 
 @Composable
 fun RootNavGraph(navController: NavHostController) {

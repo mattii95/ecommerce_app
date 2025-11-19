@@ -34,7 +34,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.courrouxdigital.ecommerceapp.presentation.components.CustomButton
 import com.courrouxdigital.ecommerceapp.presentation.components.CustomTextField
-import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.AuthScreen
+import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.auth.AuthScreen
 import com.courrouxdigital.ecommerceapp.presentation.screens.auth.login.LoginViewModel
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.platform.LocalContext

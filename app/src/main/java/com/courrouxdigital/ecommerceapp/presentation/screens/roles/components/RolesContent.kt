@@ -25,7 +25,7 @@ import androidx.navigation.compose.rememberNavController
 import coil3.compose.AsyncImage
 import com.courrouxdigital.ecommerceapp.presentation.navigation.Graph
 import com.courrouxdigital.ecommerceapp.presentation.screens.roles.RolesViewModel
-import com.courrouxdigital.ecommerceapp.ui.theme.EcommerceAppTheme
+import com.courrouxdigital.ecommerceapp.presentation.ui.theme.EcommerceAppTheme
 
 @Composable
 fun RolesContent(

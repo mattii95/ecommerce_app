@@ -1,4 +1,4 @@
-package com.courrouxdigital.ecommerceapp.ui.theme
+package com.courrouxdigital.ecommerceapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

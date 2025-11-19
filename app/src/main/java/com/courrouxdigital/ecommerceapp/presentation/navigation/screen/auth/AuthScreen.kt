@@ -1,4 +1,4 @@
-package com.courrouxdigital.ecommerceapp.presentation.navigation.screen
+package com.courrouxdigital.ecommerceapp.presentation.navigation.screen.auth
 
 sealed class AuthScreen(val route: String) {
     object Login: AuthScreen("login")

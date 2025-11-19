@@ -11,7 +11,7 @@ import androidx.navigation.compose.rememberNavController
 import com.courrouxdigital.ecommerceapp.presentation.components.CustomTopBar
 import com.courrouxdigital.ecommerceapp.presentation.screens.auth.register.components.Register
 import com.courrouxdigital.ecommerceapp.presentation.screens.auth.register.components.RegisterContent
-import com.courrouxdigital.ecommerceapp.ui.theme.EcommerceAppTheme
+import com.courrouxdigital.ecommerceapp.presentation.ui.theme.EcommerceAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

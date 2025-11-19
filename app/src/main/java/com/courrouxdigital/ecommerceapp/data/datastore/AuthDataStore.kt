@@ -6,13 +6,27 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.courrouxdigital.ecommerceapp.core.Config
 import com.courrouxdigital.ecommerceapp.domain.models.AuthResponse
+import com.courrouxdigital.ecommerceapp.domain.models.User
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.runBlocking
 
 class AuthDataStore(private val dataStore: DataStore<Preferences>) {
 
     suspend fun save(authResponse: AuthResponse) {
         val dataStoreKey = stringPreferencesKey(Config.AUTH_KEY)
+        dataStore.edit { pref ->
+            pref[dataStoreKey] = authResponse.toJson()
+        }
+    }
+    suspend fun update(user: User) {
+        val dataStoreKey = stringPreferencesKey(Config.AUTH_KEY)
+        val authResponse = runBlocking { getData().first() }
+        authResponse.user?.name = user.name
+        authResponse.user?.lastname = user.lastname
+        authResponse.user?.phone = user.phone
+        if (!user.imageUrl.isNullOrBlank()) authResponse.user?.imageUrl = user.imageUrl
         dataStore.edit { pref ->
             pref[dataStoreKey] = authResponse.toJson()
         }

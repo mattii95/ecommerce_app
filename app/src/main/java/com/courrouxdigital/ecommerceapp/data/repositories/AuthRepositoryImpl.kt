@@ -35,6 +35,10 @@ class AuthRepositoryImpl(
         return authLocalDatasource.saveSession(authResponse)
     }
 
+    override suspend fun updateSession(user: User) {
+        return authLocalDatasource.updateSession(user)
+    }
+
     override fun getSession(): Flow<AuthResponse> {
         return authLocalDatasource.getSession()
     }

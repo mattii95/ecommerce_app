@@ -1,14 +1,15 @@
-package com.courrouxdigital.ecommerceapp.presentation.navigation.graph
+package com.courrouxdigital.ecommerceapp.presentation.navigation.graph.client
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.courrouxdigital.ecommerceapp.presentation.navigation.Graph
-import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.ClientScreen
+import com.courrouxdigital.ecommerceapp.presentation.navigation.graph.profile.profileNavGraph
+import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.client.ClientScreen
 import com.courrouxdigital.ecommerceapp.presentation.screens.client.category.list.ClientCategoryListScreen
 import com.courrouxdigital.ecommerceapp.presentation.screens.client.product.list.ClientProductListScreen
-import com.courrouxdigital.ecommerceapp.presentation.screens.profile.ProfileScreen
+import com.courrouxdigital.ecommerceapp.presentation.screens.profile.info.ProfileScreen
 
 @Composable
 fun ClientNavGraph(navController: NavHostController) {
@@ -26,7 +27,9 @@ fun ClientNavGraph(navController: NavHostController) {
         }
 
         composable(route = ClientScreen.Profile.route) {
-            ProfileScreen()
+            ProfileScreen(navController)
         }
+
+        profileNavGraph(navController)
     }
 }

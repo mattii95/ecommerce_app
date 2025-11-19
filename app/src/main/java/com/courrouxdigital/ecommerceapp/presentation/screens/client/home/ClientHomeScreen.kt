@@ -8,8 +8,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.courrouxdigital.ecommerceapp.presentation.components.CustomBottomBar
-import com.courrouxdigital.ecommerceapp.presentation.navigation.graph.ClientNavGraph
-import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.ClientScreen
+import com.courrouxdigital.ecommerceapp.presentation.navigation.graph.client.ClientNavGraph
+import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.client.ClientScreen
 
 @Composable
 fun ClientHomeScreen(navController: NavHostController = rememberNavController()) {

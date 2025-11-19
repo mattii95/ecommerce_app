@@ -1,18 +1,18 @@
 package com.courrouxdigital.ecommerceapp.presentation.screens.admin.home
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.courrouxdigital.ecommerceapp.presentation.components.CustomBottomBar
-import com.courrouxdigital.ecommerceapp.presentation.navigation.graph.AdminNavGraph
-import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.AdminScreen
-import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.ClientScreen
+import com.courrouxdigital.ecommerceapp.presentation.navigation.graph.admin.AdminNavGraph
+import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.admin.AdminScreen
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun AdminHomeScreen(navController: NavHostController = rememberNavController()) {
 
@@ -27,10 +27,6 @@ fun AdminHomeScreen(navController: NavHostController = rememberNavController()) 
             CustomBottomBar(navController, screens)
         }
     ) { innerPadding ->
-        Box(
-            modifier = Modifier.padding(innerPadding)
-        ) {
-            AdminNavGraph(navController)
-        }
+        AdminNavGraph(navController)
     }
 }

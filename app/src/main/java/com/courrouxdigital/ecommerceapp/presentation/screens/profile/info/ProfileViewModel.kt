@@ -1,10 +1,9 @@
-package com.courrouxdigital.ecommerceapp.presentation.screens.profile
+package com.courrouxdigital.ecommerceapp.presentation.screens.profile.info
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.courrouxdigital.ecommerceapp.domain.usecases.auth.AuthUseCase
-import com.courrouxdigital.ecommerceapp.presentation.screens.auth.login.LoginState
-import com.courrouxdigital.ecommerceapp.presentation.screens.profile.components.ProfileState
+import com.courrouxdigital.ecommerceapp.presentation.screens.profile.info.ProfileState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
-    private val authUseCase: AuthUseCase
+    private val authUseCase: AuthUseCase,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(ProfileState())
@@ -31,7 +30,7 @@ class ProfileViewModel @Inject constructor(
 
     fun getSession() = viewModelScope.launch {
         authUseCase.getSession().collect { data ->
-            _state.update { it.copy(session = data) }
+            _state.update { it.copy(userData = data.user) }
         }
     }
 }

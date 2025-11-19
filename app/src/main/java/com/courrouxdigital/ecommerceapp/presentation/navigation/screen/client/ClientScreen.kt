@@ -1,4 +1,4 @@
-package com.courrouxdigital.ecommerceapp.presentation.navigation.screen
+package com.courrouxdigital.ecommerceapp.presentation.navigation.screen.client
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.List

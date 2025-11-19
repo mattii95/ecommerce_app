@@ -11,7 +11,7 @@ import androidx.navigation.NavHostController
 import com.courrouxdigital.ecommerceapp.domain.utils.Resource
 import com.courrouxdigital.ecommerceapp.presentation.components.CustomProgressBar
 import com.courrouxdigital.ecommerceapp.presentation.navigation.Graph
-import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.AuthScreen
+import com.courrouxdigital.ecommerceapp.presentation.navigation.screen.auth.AuthScreen
 import com.courrouxdigital.ecommerceapp.presentation.screens.auth.register.RegisterViewModel
 
 @Composable
